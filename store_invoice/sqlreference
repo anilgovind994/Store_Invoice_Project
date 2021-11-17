@@ -1,0 +1,84 @@
+
+CREATE TABLE APP.PRODUCT(
+    PRODUCT_ID VARCHAR(10) PRIMARY KEY,
+    PRODUCT_NAME VARCHAR(15) UNIQUE,
+    PRODUCT_PRICE VARCHAR(15),
+    PRODUCT_CATEGORY VARCHAR(15)
+);
+
+create stude
+INSERT INTO APP.PRODUCT values(
+'001','Md','25','Flower'
+);
+
+
+CREATE TABLE APP.PURCHASE(
+    PURCHASE_ID VARCHAR(10) PRIMARY KEY,
+    PURCHASE_DATE DATE,
+    PRODUCT_ID VARCHAR(10),
+    PRODUCT_QUANTITY VARCHAR(10)
+);
+INSERT INTO APP.PURCHASE values(
+    '052','2020-07-18','001','9'
+);
+
+CREATE TABLE APP.PAYMENT (PAYMENT_ID varchar(15),
+USER_ID varchar(30), PRODUCT_NAME varchar(40),
+AMOUNT varchar(10),
+PRIMARY KEY (PAYMENT_ID));
+CREATE TABLE APP.PAYMENT_TYPE (CARD_NUMBER varchar(20),
+EXPIRY_DATE DATE, CVV varchar(10),
+CASH_ON_DELIVERY varchar(15),
+PRIMARY KEY(CARD_NUMBER));
+CREATE TABLE APP.TRANSACTIONS (TRANSACTION_ID varchar(20),
+STATUS varchar(15), PRIMARY KEY(TRANSACTION_ID));
+
+
+
+CREATE TABLE APP.INVOICE(INVOICE_ID VARCHAR(10) PRIMARY KEY,INVOICE_DATE DATE );
+INSERT INTO APP.INVOIVE values( '100', '2021-11-12' );
+INSERT INTO APP.INVOIVE values( '101', '2021-11-12' );
+INSERT INTO APP.INVOIVE values( '102', '2021-11-12' );
+select * from APP.INVOICE;
+
+select * from APP.SALES;
+CREATE TABLE APP.SALES(PRODUCT_ID VARCHAR(10) PRIMARY KEY, ITEM VARCHAR(10),PURCHASE VARCHAR(10),SALE VARCHAR(10),PROFIT VARCHAR(10));
+INSERT INTO APP.SALES values( '100', 'BOOK','200' ,'100','90');
+INSERT INTO APP.SALES values( '101', 'PEN','20' ,'15','30');
+
+package com.store.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(schema = "APP", name = "EMPLOYEE")
+public class Employee {
+@Id
+@Column(name = "EMPID")
+private String empId;
+@Column(name = "EMPNM")
+private String empNm;
+public String getEmpId() {
+return empId;
+}
+public void setEmpId(String empId) {
+this.empId = empId;
+}
+public String getEmpNm() {
+return empNm;
+}
+public void setEmpNm(String empNm) {
+this.empNm = empNm;
+}
+}
+
+
+
+CREATE TABLE APP.INVOICE(INVOICE_ID VARCHAR(10) PRIMARY KEY,INVOICE_DATE DATE );
+INSERT INTO APP.INVOICE values( '100', '2021-11-12' );
+INSERT INTO APP.INVOICE values( '101', '2021-11-12' );
+INSERT INTO APP.INVOICE values( '102', '2021-11-12' );
+select * from APP.SALES;
